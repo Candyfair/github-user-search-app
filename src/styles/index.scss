@@ -1,19 +1,55 @@
 @use 'reset';
 @use 'vars';
 
-body {
-  font-family: sans-serif;
-  background-color: #4B6A9B;
+@font-face {
+  font-family: 'Space Mono';
+  src: url('../assets/fonts/SpaceMono-Regular.ttf');
+  font-weight: 400;
+  font-display: swap;
 }
 
-/*
-  // or you can import your own font
-  @font-face {
-    font-family: 'Roboto';
-    src: url('../assets/fonts/Roboto-Regular.ttf');
-  }
+@font-face {
+  font-family: 'Space Mono';
+  src: url('../assets/fonts/SpaceMono-Bold.ttf');
+  font-weight: 700;
+  font-display: swap;
+}
 
-  body {
-    font-family: 'Roboto', sans-serif;
-  }
-*/
+html, body, #root, .app {
+  height: 100%;
+}
+
+body {
+  background-color: #4B6A9B;
+  font-family: 'Space Mono', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 25px;
+}
+
+h1 {
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 38px;
+}
+
+h2 {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 33px;
+}
+
+h3 {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+h4 {
+  font-size: 13px;
+  line-height: 20px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
