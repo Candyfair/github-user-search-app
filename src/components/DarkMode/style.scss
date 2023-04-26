@@ -1,0 +1,43 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/vars';
+
+.darkMode {
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+
+  @include flexCenter(right, top, row);
+
+  &__text {
+    color: $mode-light;
+
+    &-dark {
+      color: $text-dark;
+    }
+  }
+
+  &__icon {
+    margin-left: 16px;
+    fill: $mode-light;
+
+    &-dark {
+      margin-left: 16px;
+      fill: $text-dark;
+    }
+  }
+}
+
+
+@media (prefers-color-scheme: dark) {
+  .darkMode {
+    &__text {
+      color: $text-dark;
+    }
+
+    &__icon {
+      margin-left: 16px;
+      fill: $text-dark;
+    }
+  }
+}

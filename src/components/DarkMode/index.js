@@ -1,8 +1,11 @@
 import { useState, useEffect } from 'react';
-import './style.scss';
+import styles from './style.scss';
+
+import * as CONSTANTS from '../../utils/constants';
+import Icon from '../Icon';
 
 const DarkMode = () => {
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(true);
 
   let theme;
   const { body } = document;
@@ -38,12 +41,24 @@ const DarkMode = () => {
   });
 
   return (
-    <button
+    <div
       onClick={handleClick}
       type="button"
+      className="darkMode"
     >
-      {isDark ? 'Dark' : 'Light'}
-    </button>
+      <div className={`darkMode__text${!isDark ? '-dark' : ''}`}>
+        {isDark ? 'DARK' : 'LIGHT'}
+      </div>
+
+      <div className={`darkMode__icon${!isDark ? '-dark' : ''}`}>
+        {
+          isDark
+            ? <Icon icon={CONSTANTS.ICONS.sun} size={20} viewbox={20} />
+            : <Icon icon={CONSTANTS.ICONS.moon} size={20} viewbox={20} />
+        }
+      </div>
+
+    </div>
   );
 };
 

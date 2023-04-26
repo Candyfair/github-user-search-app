@@ -2,7 +2,7 @@ import './style.scss';
 
 const Header = () => (
   <div>
-    Header
+    <div>Logo</div>
   </div>
 );
 
