@@ -20,11 +20,24 @@ html, body, #root, .app {
 }
 
 body {
-  background-color: #4B6A9B;
+  background: vars.$background-light;
   font-family: 'Space Mono', sans-serif;
   font-size: 15px;
   font-weight: 400;
   line-height: 25px;
+}
+
+body.dark {
+  background-color: vars.$background-dark;
+  color: vars.$text-dark;
+
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: vars.$background-dark;
+    color: vars.$text-dark;
+  }
 }
 
 h1 {
@@ -51,5 +64,17 @@ h4 {
 
 a:hover {
   text-decoration: underline;
+}
+
+button {
+  border: none;
+  border-radius: 10px;
+  background-color: vars.$button;
+  color: vars.$button-text;
+  font-family: 'Space Mono', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  height: 50px;
+  width: 106px;
 }
 
