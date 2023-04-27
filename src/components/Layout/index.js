@@ -12,6 +12,7 @@ import { changeMode } from '../../redux/actions/mode';
 const Layout = () => {
   const dispatch = useDispatch();
 
+  // Check user's preferred mode
   const mediaStatus = window.matchMedia('(prefers-color-scheme: dark)');
   const prefersDark = mediaStatus.matches;
 

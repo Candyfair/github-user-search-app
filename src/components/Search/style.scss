@@ -1,0 +1,12 @@
+@import '../../styles/mixins';
+@import '../../styles/vars';
+
+.search {
+  @include flexCenter(space-between, center, row);
+
+  height: 60px;
+  padding: 7px;
+  padding-left: 16px;
+  margin-bottom: 16px;
+  width: 100%;
+}
