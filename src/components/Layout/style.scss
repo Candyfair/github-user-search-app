@@ -1,0 +1,15 @@
+@import '../../styles/mixins';
+@import '../../styles/vars';
+
+.container {
+  @include flexCenter(center, center, column);
+
+  margin-top: 31px;
+  margin-left: 24px;
+  margin-right: 24px;
+
+}
+
+header {
+  width: 100%;
+}

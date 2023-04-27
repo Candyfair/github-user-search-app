@@ -1,0 +1,14 @@
+@import '../../styles/vars';
+@import '../../styles/mixins';
+
+.header {
+  @include flexCenter(space-between, center, row);
+  margin-bottom: 35px;
+  width: 100%;
+
+  &__logo {
+    color: $logo-light;
+    font-size: 26px;
+    font-weight: 700;
+  }
+}

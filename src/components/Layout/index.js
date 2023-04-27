@@ -4,13 +4,11 @@ import Header from '../Header';
 import Search from '../Search';
 import Profile from '../Profile';
 import Footer from '../Footer';
-import DarkMode from '../DarkMode';
 
 const Layout = () => (
-  <div className="global">
+  <div className="container">
     <header>
       <Header />
-      <DarkMode />
     </header>
 
     <main>

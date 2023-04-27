@@ -1,17 +1,23 @@
-import { useState, useEffect } from 'react';
-import styles from './style.scss';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+
+import { changeMode, setMode } from '../../redux/actions/mode';
+
+import './style.scss';
 
 import * as CONSTANTS from '../../utils/constants';
 import Icon from '../Icon';
 
 const DarkMode = () => {
-  const [isDark, setIsDark] = useState(true);
+  const dispatch = useDispatch();
+  const { lightmode, mode } = useSelector((state) => state.mode);
 
   let theme;
   const { body } = document;
   const lightTheme = 'light';
   const darkTheme = 'dark';
 
+  // Store data
   if (localStorage) {
     theme = localStorage.getItem('theme');
   }
@@ -21,14 +27,21 @@ const DarkMode = () => {
   }
   else {
     body.classList.add(lightTheme);
+    theme = mode;
   }
 
   const handleClick = () => {
-    setIsDark((prevState) => !prevState);
+    dispatch(changeMode());
+    if (theme === 'light') {
+      dispatch(setMode('dark'));
+    }
+    else {
+      dispatch(setMode('light'));
+    }
   };
 
   useEffect(() => {
-    if (isDark) {
+    if (lightmode) {
       body.classList.replace(darkTheme, lightTheme);
       localStorage.setItem('theme', 'light');
       theme = lightTheme;
@@ -46,15 +59,15 @@ const DarkMode = () => {
       type="button"
       className="darkMode"
     >
-      <div className={`darkMode__text${!isDark ? '-dark' : ''}`}>
-        {isDark ? 'DARK' : 'LIGHT'}
+      <div className={`darkMode__text${!lightmode ? '-dark' : ''}`}>
+        {lightmode ? 'DARK' : 'LIGHT'}
       </div>
 
-      <div className={`darkMode__icon${!isDark ? '-dark' : ''}`}>
+      <div className={`darkMode__icon${!lightmode ? '-dark' : ''}`}>
         {
-          isDark
-            ? <Icon icon={CONSTANTS.ICONS.sun} size={20} viewbox={20} />
-            : <Icon icon={CONSTANTS.ICONS.moon} size={20} viewbox={20} />
+          lightmode
+            ? <Icon icon={CONSTANTS.ICONS.moon} size={20} />
+            : <Icon icon={CONSTANTS.ICONS.sun} size={20} />
         }
       </div>
 

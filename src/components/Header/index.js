@@ -1,8 +1,11 @@
 import './style.scss';
 
+import DarkMode from '../DarkMode';
+
 const Header = () => (
-  <div>
-    <div>Logo</div>
+  <div className="header">
+    <div className="header__logo">devfinder</div>
+    <DarkMode />
   </div>
 );
 
