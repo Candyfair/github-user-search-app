@@ -5,11 +5,11 @@ import DarkMode from '../DarkMode';
 
 const Header = () => {
   // Check dark mode status
-  const { mode } = useSelector((state) => state.mode);
+  const { lightmode } = useSelector((state) => state.mode);
 
   return (
     <div className="header">
-      <div className={`header__logo ${mode === 'dark' ? 'logo-dark' : ''}`}>devfinder</div>
+      <div className={`header__logo ${!lightmode ? 'logo-dark' : ''}`}>devfinder</div>
       <DarkMode />
     </div>
   );

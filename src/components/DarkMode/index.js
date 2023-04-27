@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 
-import { changeMode, setMode } from '../../redux/actions/mode';
+import { changeMode } from '../../redux/actions/mode';
 
 import './style.scss';
 
@@ -10,7 +10,7 @@ import Icon from '../Icon';
 
 const DarkMode = () => {
   // Check state for dark mode status
-  const { lightmode, mode } = useSelector((state) => state.mode);
+  const { lightmode } = useSelector((state) => state.mode);
   const dispatch = useDispatch();
 
   let theme;
@@ -28,18 +28,12 @@ const DarkMode = () => {
   }
   else {
     body.classList.add(lightTheme);
-    theme = mode;
+    theme = lightTheme;
   }
 
   // Change mode
   const handleClick = () => {
     dispatch(changeMode());
-    if (theme === 'light') {
-      dispatch(setMode('dark'));
-    }
-    else {
-      dispatch(setMode('light'));
-    }
   };
 
   useEffect(() => {

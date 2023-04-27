@@ -7,16 +7,18 @@ import Header from '../Header';
 import Search from '../Search';
 import Profile from '../Profile';
 import Footer from '../Footer';
-import { changeMode, setMode } from '../../redux/actions/mode';
+import { changeMode } from '../../redux/actions/mode';
 
 const Layout = () => {
   const dispatch = useDispatch();
 
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const mediaStatus = window.matchMedia('(prefers-color-scheme: dark)');
+  const prefersDark = mediaStatus.matches;
 
   useEffect(() => {
-    dispatch(changeMode(prefersDark));
-    dispatch(setMode('dark'));
+    if (prefersDark) {
+      dispatch(changeMode(prefersDark));
+    }
   });
 
   return (
@@ -36,6 +38,6 @@ const Layout = () => {
 
     </div>
   );
-}
+};
 
 export default Layout;

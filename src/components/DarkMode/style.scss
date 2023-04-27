@@ -29,15 +29,15 @@
 }
 
 
-@media (prefers-color-scheme: dark) {
-  .darkMode {
-    &__text {
-      color: $text-dark;
-    }
+// @media (prefers-color-scheme: dark) {
+//   .darkMode {
+//     &__text {
+//       color: $text-dark;
+//     }
 
-    &__icon {
-      margin-left: 16px;
-      fill: $text-dark;
-    }
-  }
-}
+//     &__icon {
+//       margin-left: 16px;
+//       fill: $text-dark;
+//     }
+//   }
+// }
