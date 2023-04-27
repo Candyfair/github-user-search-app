@@ -21,24 +21,20 @@ html, body, #root, .app {
 }
 
 body {
-  background: vars.$background-light;
   font-family: 'Space Mono', sans-serif;
   font-size: 15px;
   font-weight: 400;
   line-height: 25px;
 }
 
+body.light {
+  background: vars.$background-light;
+}
+
 body.dark {
   background-color: vars.$background-dark;
   color: vars.$text-dark;
 
-}
-
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: vars.$background-dark;
-    color: vars.$text-dark;
-  }
 }
 
 h1 {

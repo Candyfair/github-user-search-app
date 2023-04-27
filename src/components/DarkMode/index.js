@@ -9,15 +9,16 @@ import * as CONSTANTS from '../../utils/constants';
 import Icon from '../Icon';
 
 const DarkMode = () => {
-  const dispatch = useDispatch();
+  // Check state for dark mode status
   const { lightmode, mode } = useSelector((state) => state.mode);
+  const dispatch = useDispatch();
 
   let theme;
   const { body } = document;
   const lightTheme = 'light';
   const darkTheme = 'dark';
 
-  // Store data
+  // Check local storage
   if (localStorage) {
     theme = localStorage.getItem('theme');
   }
@@ -30,6 +31,7 @@ const DarkMode = () => {
     theme = mode;
   }
 
+  // Change mode
   const handleClick = () => {
     dispatch(changeMode());
     if (theme === 'light') {
@@ -51,7 +53,7 @@ const DarkMode = () => {
       localStorage.setItem('theme', 'dark');
       theme = darkTheme;
     }
-  });
+  }, [lightmode]);
 
   return (
     <div
