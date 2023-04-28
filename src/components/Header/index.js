@@ -9,7 +9,7 @@ const Header = () => {
 
   return (
     <div className="header">
-      <div className={`header__logo${!lightmode ? ' logo-dark' : ''}`}>devfinder</div>
+      <div className={`header__logo${!lightmode ? ' logo-dark' : ''}`}><h1>devfinder</h1></div>
       <DarkMode />
     </div>
   );

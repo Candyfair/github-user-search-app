@@ -29,6 +29,7 @@ body {
 
 body.light {
   background: vars.$background-light;
+  color: vars.$text-light;
 }
 
 body.dark {
@@ -59,8 +60,12 @@ h4 {
   line-height: 20px;
 }
 
-a:hover {
-  text-decoration: underline;
+a {
+  color: vars.$link;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 button {
@@ -83,4 +88,8 @@ button {
 
 .box-dark {
   background-color: vars.$content-dark;
+}
+
+.text-dark {
+  color: vars.$text-dark;
 }

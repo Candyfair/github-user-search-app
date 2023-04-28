@@ -3,5 +3,99 @@
 
 .profile {
   padding: 32px 24px;
-  margin-bottom: 16px;
+  margin-bottom: 36px;
+
+  // PROFILE HEADER
+  &__header {
+    @include flexCenter(left, center, row);
+    margin-bottom: 33px;
+
+    &__avatar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100px;
+      width: 100px;
+    }
+
+    &__user-details {
+      @include flexCenter(flex-start, flex-start, column);
+
+      &__name {
+        color: $boldtitle-light;
+        font-size: 16px;
+        font-weight: 700;
+      }
+
+      &__pseudo {
+        margin-bottom: 6px;
+
+        & a:hover {
+          text-decoration: none;
+        }
+      }
+
+      &__joined {
+        color: $mode-light;
+      }
+    }
+  }
+
+  // DESCRIPTION
+  &__description {
+    line-height: 25px;
+    margin-bottom: 23px;
+  }
+
+  // STATS
+  &__stats {
+    @include flexCenter(space-between, center, row);
+
+    background-color: $background-light;
+    border-radius: 10px;
+    height: 85px;
+    margin-bottom: 24px;
+    padding: 18px 24px;
+
+    &__box {
+      @include flexCenter(center, center, column);
+
+      &__title {
+        font-size: 11px;
+        line-height: 16px;
+        margin-bottom: 8px;
+      }
+
+      &__number {
+        color: $boldtitle-light;
+        font-size: 16px;
+        font-weight: 700;
+      }
+    }
+  }
+
+  // LINKS
+  &__links {
+    @include flexCenter(flex-start, flex-start, column);
+
+    &__link {
+      @include flexCenter(flex-start, center, row );
+      margin-bottom: 16px
+    }
+
+    &__icon {
+      @include flexCenter(flex-start, flex-start, column);
+      fill: $text-light;
+      width: 33px;
+    }
+  }
+
+}
+
+.stats-dark {
+  background-color: $background-dark;
+}
+
+.icon-dark {
+  fill: $text-dark;
 }
