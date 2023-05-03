@@ -86,10 +86,19 @@ button {
   border-radius: 15px;
 }
 
+// DARK MODE globals
 .box-dark {
   background-color: vars.$content-dark;
 }
 
 .text-dark {
   color: vars.$text-dark;
+}
+
+.stats-dark {
+  background-color:  vars.$background-dark;
+}
+
+.icon-dark {
+  fill:  vars.$text-dark;
 }

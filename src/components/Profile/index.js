@@ -5,7 +5,6 @@ import './style.scss';
 import Icon from '../Icon';
 import * as CONSTANTS from '../../utils/constants';
 
-
 const Profile = () => {
   // Check dark mode status
   const { lightmode } = useSelector((state) => state.mode);
