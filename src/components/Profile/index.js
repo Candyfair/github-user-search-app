@@ -8,6 +8,7 @@ import * as CONSTANTS from '../../utils/constants';
 const Profile = () => {
   // Check dark mode status
   const { lightmode } = useSelector((state) => state.mode);
+  const { user } = useSelector((state) => state.search);
 
   return (
     <div className={`profile box${!lightmode ? ' box-dark' : ''}`}>
@@ -24,7 +25,7 @@ const Profile = () => {
               </span>
             </div>
             <div className="profile__header__user-details__pseudo">
-              <a href="">@octocat</a>
+              <a href="">@{user}</a>
             </div>
           </div>
 

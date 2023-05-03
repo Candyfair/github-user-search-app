@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import counter from './counter';
 import mode from './mode';
+import search from './search';
 
 export default combineReducers({
-  counter,
   mode,
+  search,
 });
