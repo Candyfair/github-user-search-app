@@ -1,14 +1,24 @@
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { useState, useEffect } from 'react';
 
 import './style.scss';
 
 import Icon from '../Icon';
 import * as CONSTANTS from '../../utils/constants';
+import { searchUser } from '../../redux/actions/search';
 
 const Profile = () => {
   // Check dark mode status
   const { lightmode } = useSelector((state) => state.mode);
+
+  const dispatch = useDispatch();
+
   const { user } = useSelector((state) => state.search);
+
+  useEffect(() => {
+    dispatch(searchUser())
+      .catch((error) => console.error(error));
+  }, []);
 
   return (
     <div className={`profile box${!lightmode ? ' box-dark' : ''}`}>
