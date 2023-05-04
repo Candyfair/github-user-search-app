@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux';
+import moment from 'moment';
 
 import './style.scss';
 
@@ -29,13 +30,13 @@ const Profile = () => {
               </span>
             </div>
             <div className="profile__header__user-details__pseudo">
-              <a href="">@{userInfo.login}</a>
+              <a href={userInfo.html_url}>@{userInfo.login}</a>
             </div>
           </div>
 
           <div className="profile__header__user-details__joined">
             <span className={!lightmode ? 'text-dark' : ''}>
-              Joined {userInfo.created_at}
+              Joined {moment(userInfo.created_at).format('Do MMM YYYY')}
             </span>
           </div>
 
@@ -45,8 +46,7 @@ const Profile = () => {
       {/* Description */}
       <div className="profile__description">
         <span className={!lightmode ? 'text-dark' : ''}>
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-          Donec odio. Quisque volutpat mattis eros.
+          {userInfo.bio}
         </span>
       </div>
 
