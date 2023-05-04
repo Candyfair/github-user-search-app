@@ -7,29 +7,14 @@ export const getUser = (value) => ({
 });
 
 // Search GitHub API
-export const SEARCH_USER_REQUEST = 'SEARCH_USER_REQUEST';
-export const SEARCH_USER_SUCCESS = 'SEARCH_USER_SUCCESS';
-export const SEARCH_USER_FAILURE = 'SEARCH_USER_FAILURE';
+export const FETCH_USER = 'FETCH_USER';
+export const RECEIVED_USER = 'RECEIVED_USER';
 
-export const searchUser = () => (dispatch) => {
-  dispatch({ type: SEARCH_USER_REQUEST });
+export const fetchUser = () => ({
+  type: FETCH_USER,
+});
 
-  const url = 'https://api.github.com/search/users?q=octocat';
-
-  return fetch(url)
-    .then((response) => response.json())
-    .then((json) => {
-      dispatch({
-        type: SEARCH_USER_SUCCESS,
-        payload: json.items,
-      });
-      return json.items;
-    })
-    .catch((error) => {
-      dispatch({
-        type: SEARCH_USER_FAILURE,
-        payload: error.message,
-      });
-      throw error;
-    });
-};
+export const receivedUser = (payload) => ({
+  type: RECEIVED_USER,
+  payload,
+});

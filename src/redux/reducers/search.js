@@ -1,10 +1,9 @@
-import { GET_USER, SEARCH_USER_FAILURE, SEARCH_USER_REQUEST, SEARCH_USER_SUCCESS } from '../actions/search';
+import { FETCH_USER, GET_USER, RECEIVED_USER } from '../actions/search';
 
 const initialState = {
-  user: null,
+  user: 'octocat',
   userInfo: [],
   loading: false,
-  error: null,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -15,25 +14,17 @@ const reducer = (state = initialState, action = {}) => {
         user: action.value,
       };
 
-    case SEARCH_USER_REQUEST:
+    case FETCH_USER:
       return {
         ...state,
         loading: true,
-        error: null,
       };
 
-    case SEARCH_USER_SUCCESS:
+    case RECEIVED_USER:
       return {
         ...state,
         userInfo: action.payload,
         loading: false,
-      };
-
-    case SEARCH_USER_FAILURE:
-      return {
-        ...state,
-        loading: false,
-        error: action.payload,
       };
 
     default:

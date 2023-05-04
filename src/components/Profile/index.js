@@ -1,31 +1,25 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 
 import './style.scss';
 
 import Icon from '../Icon';
 import * as CONSTANTS from '../../utils/constants';
-import { searchUser } from '../../redux/actions/search';
 
 const Profile = () => {
   // Check dark mode status
   const { lightmode } = useSelector((state) => state.mode);
 
-  const dispatch = useDispatch();
-
-  const { user } = useSelector((state) => state.search);
-
-  useEffect(() => {
-    dispatch(searchUser())
-      .catch((error) => console.error(error));
-  }, []);
+  // Get user and user info from state
+  const { user, userInfo } = useSelector((state) => state.search);
 
   return (
     <div className={`profile box${!lightmode ? ' box-dark' : ''}`}>
 
       {/* Profile header */}
       <div className="profile__header">
-        <div className="profile__header__avatar">Avatar</div>
+        <div className="profile__header__avatar">
+          <img src={userInfo.avatar_url} alt={userInfo.login} />
+        </div>
         <div className="profile__header__user-details">
 
           <div>
@@ -35,13 +29,13 @@ const Profile = () => {
               </span>
             </div>
             <div className="profile__header__user-details__pseudo">
-              <a href="">@{user}</a>
+              <a href="">@{userInfo.login}</a>
             </div>
           </div>
 
           <div className="profile__header__user-details__joined">
             <span className={!lightmode ? 'text-dark' : ''}>
-              Joined
+              Joined {userInfo.created_at}
             </span>
           </div>
 

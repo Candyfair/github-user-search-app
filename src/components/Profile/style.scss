@@ -13,9 +13,14 @@
     &__avatar {
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       height: 100px;
       width: 100px;
+
+      & img {
+        border-radius: 100%;
+        width: 80%;
+      }
     }
 
     &__user-details {

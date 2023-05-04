@@ -1,11 +1,26 @@
+import { useDispatch, useSelector } from 'react-redux';
 import './styles/index.scss';
 
 import Layout from 'src/components/Layout';
+import { useEffect } from 'react';
+import { fetchUser } from './redux/actions/search';
 
-const App = () => (
-  <div className="app">
-    <Layout />
-  </div>
-);
+const App = () => {
+  // Get user from state
+  const { user } = useSelector((state) => state.search);
+
+  // Call API
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchUser());
+  }, []);
+
+  return (
+    <div className="app">
+      <Layout />
+    </div>
+  );
+};
 
 export default App;
