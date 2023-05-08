@@ -22,5 +22,11 @@ header, main, footer {
   .container {
     width: 573px;
   }
+}
 
+// LAPTOP
+@media (min-width: 900px) {
+  .container {
+    width: 730px;
+  }
 }

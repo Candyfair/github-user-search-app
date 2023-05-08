@@ -73,7 +73,12 @@
       margin-right: 24px;
     }
 
+    &__input {
+      font-size: 16px;
+    }
+
     &__no-results {
+      font-size: 15px;
       right: 24px;
     }
 
@@ -82,4 +87,15 @@
     }
 
   }
+}
+
+// LAPTOP
+@media (min-width: 900px) {
+  .search {
+
+    &__input {
+      font-size: 18px;
+    }
+  }
+
 }

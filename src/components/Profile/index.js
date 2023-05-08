@@ -22,10 +22,14 @@ const Profile = () => {
     <div className={`profile box${!lightmode ? ' box-dark' : ''}`}>
 
       {/* Profile header */}
+      {/* Bloc 1 */}
       <div className="profile__header">
+
+        {/* Avatar */}
         <div className="profile__header__avatar">
           <img src={userInfo.avatar_url} alt={userInfo.login} />
         </div>
+
         <div className="profile__header__user-details">
 
           <div>
@@ -58,6 +62,7 @@ const Profile = () => {
         </div>
       </div>
 
+      {/* Blocs 2, 3 et 4 */}
       {/* Bio */}
       <div className="profile__description">
         <span className={!lightmode ? 'text-dark' : ''}>
