@@ -13,6 +13,11 @@ const Profile = () => {
   // Get user and user info from state
   const { userInfo } = useSelector((state) => state.search);
 
+  let company;
+  if (userInfo.company) {
+    company = userInfo.company.replace(/^@/, '');
+  }
+
   return (
     <div className={`profile box${!lightmode ? ' box-dark' : ''}`}>
 
@@ -134,7 +139,11 @@ const Profile = () => {
             <span>
               {
                 userInfo.twitter_username
-                  ? userInfo.twitter_username
+                  ? (
+                    <a href={`https://twitter.com/${userInfo.twitter_username}`} className={`link-${!lightmode ? 'dark' : 'light'}`} target="_blank" rel="noopener noreferrer">
+                      {userInfo.twitter_username}
+                    </a>
+                  )
                   : 'Not Available'
               }
             </span>
@@ -148,7 +157,11 @@ const Profile = () => {
             <span>
               {
                 userInfo.company
-                  ? userInfo.company
+                  ? (
+                    <a href={`https://github.com/${company}`} className={`link-${!lightmode ? 'dark' : 'light'}`} target="_blank" rel="noopener noreferrer">
+                      {userInfo.company}
+                    </a>
+                  )
                   : 'Not Available'
               }
             </span>
