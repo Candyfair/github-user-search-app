@@ -86,7 +86,9 @@
 
     &__link {
       @include flexCenter(flex-start, center, row );
-      margin-bottom: 16px
+      margin-bottom: 16px;
+
+
     }
 
     &__icon {
@@ -99,4 +101,17 @@
 
 .stats-dark {
   background-color:  $background-dark;
+}
+
+.link {
+  &-light {
+    color: $text-light;
+  }
+  &-dark {
+    color: $text-dark;
+  }
+}
+
+.not-available {
+  opacity: 0.5;
 }

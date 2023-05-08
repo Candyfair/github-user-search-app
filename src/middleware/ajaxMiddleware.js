@@ -8,6 +8,7 @@ export default (store) => (next) => (action) => {
 
       api.get(
         '/octocat',
+        // '/candyfair',
       )
         .then((res) => {
           const userAction = receivedUser(res.data);
