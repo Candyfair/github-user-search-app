@@ -47,10 +47,14 @@
     }
   }
 
-  // DESCRIPTION
+  // BIO
   &__description {
     line-height: 25px;
     margin-bottom: 23px;
+
+    &__empty {
+      opacity: 0.5;
+    }
   }
 
   // STATS
@@ -87,8 +91,6 @@
     &__link {
       @include flexCenter(flex-start, center, row );
       margin-bottom: 16px;
-
-
     }
 
     &__icon {
@@ -114,4 +116,79 @@
 
 .not-available {
   opacity: 0.5;
+}
+
+
+// TABLETS
+@media (min-width: 600px) {
+
+  .profile {
+    padding: 48px;
+
+    // Profile header
+    &__header {
+
+      &__avatar {
+        height: 117px;
+        margin-right: 37px;
+        width: 117px;
+
+        & img {
+          width: 100%;
+        }
+      }
+
+      &__user-details {
+        font-size: 15px;
+
+        &__name {
+          font-size: 26px;
+          line-height: 39px;
+          margin-bottom: 2px;
+        }
+
+        &__pseudo {
+          font-size: 16px;
+          line-height: 24px;
+        }
+      }
+    }
+
+    // Bio
+    &__description {
+      font-size: 15px;
+      line-height: 25px;
+      margin-bottom: 32px;
+    }
+
+    // Stats
+    &__stats {
+      margin-bottom: 30px;
+      padding: 32px;
+      padding-top: 15px;
+      padding-bottom: 17px;
+
+      &__box {
+        @include flexCenter(flex-start, flex-start, column);
+
+        &__title {
+          font-size: 13px;
+        }
+
+        &__number {
+          font-size: 22px;
+        }
+      }
+
+    }
+
+    // Links
+    &__links {
+      @include flexCenter(space-between, flex-start, row);
+
+      &__column {
+        flex-grow: 1;
+      }
+    }
+  }
 }

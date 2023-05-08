@@ -10,16 +10,24 @@
   margin-bottom: 16px;
   width: 100%;
 
+  &__icon-container {
+    @include flexCenter(flex-start, center, row);
+    width: 100%;
+  }
+
   &__icon {
     @include flexCenter(center, center, row);
 
     fill: $link;
+    margin-right: 5px;
   }
 
   &__input-container {
     position: relative;
     display: flex;
     flex-direction: row;
+    width: 100%;
+
   }
 
   &__input {
@@ -27,15 +35,15 @@
     color: $text-light;
     font-family: 'Space Mono', sans-serif;
     font-size: 13px;
+    width: 100%;
   }
 
   &__no-results {
     color: $noresult;
     font-size: 12px;
     font-weight: 700;
-    padding-left: 5px;
     position: absolute;
-    right: 0;
+    right: 10px;
     white-space: nowrap;
     display: block;
   }
@@ -49,4 +57,29 @@
 .input-dark {
   color: $text-dark;
   background-color: $content-dark;
+}
+
+
+// TABLETS
+@media (min-width: 600px) {
+  .search {
+    height: 69px;
+    padding-top: 23px;
+    padding-bottom: 22px;
+    padding-left: 32px;
+    padding-right: 10px;
+
+    &__icon {
+      margin-right: 24px;
+    }
+
+    &__no-results {
+      right: 24px;
+    }
+
+    &__button {
+      flex-basis: 106px;
+    }
+
+  }
 }

@@ -29,6 +29,7 @@ const Profile = () => {
         <div className="profile__header__user-details">
 
           <div>
+            {/* Name */}
             <div className="profile__header__user-details__name">
               <span className={!lightmode ? 'text-dark' : ''}>
                 {
@@ -38,6 +39,8 @@ const Profile = () => {
                 }
               </span>
             </div>
+
+            {/* Username */}
             <div className="profile__header__user-details__pseudo">
               <a href={userInfo.html_url} target="_blank" rel="noopener noreferrer">
                 @{userInfo.login}
@@ -45,6 +48,7 @@ const Profile = () => {
             </div>
           </div>
 
+          {/* Joined date */}
           <div className="profile__header__user-details__joined">
             <span className={!lightmode ? 'text-dark' : ''}>
               Joined {moment(userInfo.created_at).format('Do MMM YYYY')}
@@ -54,13 +58,17 @@ const Profile = () => {
         </div>
       </div>
 
-      {/* Description */}
+      {/* Bio */}
       <div className="profile__description">
         <span className={!lightmode ? 'text-dark' : ''}>
           {
             userInfo.bio
               ? userInfo.bio
-              : 'This profile has no bio'
+              : (
+                <span className="profile__description__empty">
+                  This profile has no bio
+                </span>
+              )
             }
         </span>
       </div>
@@ -96,9 +104,9 @@ const Profile = () => {
 
       {/* Links */}
       <div className="profile__links">
-        <div>
+        <div className="profile__links__column">
 
-          {/* Location */}
+          {/* 1. Location */}
           <div className={`profile__links__link${!userInfo.location ? ' not-available' : ''}`}>
             <div className={`profile__links__icon${!lightmode ? ' icon-dark' : ''}`}>
               <Icon icon={CONSTANTS.ICONS.location} size={20} />
@@ -112,7 +120,7 @@ const Profile = () => {
             </span>
           </div>
 
-          {/* Link to blog */}
+          {/* 2. Link website */}
           <div className={`profile__links__link${!userInfo.blog ? ' not-available' : ''}`}>
             <div className={`profile__links__icon${!lightmode ? ' icon-dark' : ''}`}>
               {/* <Icon icon={CONSTANTS.ICONS.website} size={20} /> */}
@@ -130,8 +138,8 @@ const Profile = () => {
           </div>
         </div>
 
-        {/* Twitter */}
-        <div>
+        <div className="profile__links__column">
+          {/* 3. Twitter */}
           <div className={`profile__links__link${!userInfo.twitter_username ? ' not-available' : ''}`}>
             <div className={`profile__links__icon${!lightmode ? ' icon-dark' : ''}`}>
               <Icon icon={CONSTANTS.ICONS.twitter} size={20} />
@@ -149,7 +157,7 @@ const Profile = () => {
             </span>
           </div>
 
-          {/* Company */}
+          {/* 4. Company */}
           <div className={`profile__links__link${!userInfo.company ? ' not-available' : ''}`}>
             <div className={`profile__links__icon${!lightmode ? ' icon-dark' : ''}`}>
               <Icon icon={CONSTANTS.ICONS.company} size={20} />

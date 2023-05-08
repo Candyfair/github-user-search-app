@@ -13,7 +13,7 @@ const Search = () => {
 
   // Check dark mode status
   const { lightmode } = useSelector((state) => state.mode);
-  const { userInfo, isError404 } = useSelector((state) => state.search);
+  const { isError404 } = useSelector((state) => state.search);
 
   const searchInputRef = useRef(null);
 
@@ -44,24 +44,26 @@ const Search = () => {
   return (
     <form onSubmit={handleSearchUser}>
       <div className={`search box${!lightmode ? ' box-dark' : ''}`}>
-        <div className="search__icon">
-          <Icon icon={CONSTANTS.ICONS.search} size={25} />
-        </div>
+        <div className="search__icon-container">
+          <div className="search__icon">
+            <Icon icon={CONSTANTS.ICONS.search} size={25} />
+          </div>
 
-        <div className="search__input-container">
-          <input
-            ref={searchInputRef}
-            className={`search__input${!lightmode ? ' input-dark' : ''}`}
-            type="text"
-            defaultValue="Search GitHub username&hellip;"
-            onFocus={resetInput}
-          />
+          <div className="search__input-container">
+            <input
+              ref={searchInputRef}
+              className={`search__input${!lightmode ? ' input-dark' : ''}`}
+              type="text"
+              defaultValue="Search GitHub username&hellip;"
+              onFocus={resetInput}
+            />
 
-          {
+            {
             isError404
               ? (<div className="search__no-results hide">No results</div>)
               : null
           }
+          </div>
         </div>
 
         <button type="submit" className="search__button">
