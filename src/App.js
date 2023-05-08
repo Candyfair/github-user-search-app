@@ -7,13 +7,13 @@ import { fetchUser } from './redux/actions/search';
 
 const App = () => {
   // Get user from state
-  const { user } = useSelector((state) => state.search);
+  const { username } = useSelector((state) => state.search);
 
   // Call API
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchUser());
+    dispatch(fetchUser(username));
   }, []);
 
   return (

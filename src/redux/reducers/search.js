@@ -1,7 +1,7 @@
 import { FETCH_USER, GET_USER, RECEIVED_USER } from '../actions/search';
 
 const initialState = {
-  user: 'octocat',
+  username: 'octocat',
   userInfo: [],
   loading: false,
 };
@@ -11,12 +11,13 @@ const reducer = (state = initialState, action = {}) => {
     case GET_USER:
       return {
         ...state,
-        user: action.value,
+        username: action.value,
       };
 
     case FETCH_USER:
       return {
         ...state,
+        username: action.value,
         loading: true,
       };
 

@@ -11,7 +11,7 @@ const Profile = () => {
   const { lightmode } = useSelector((state) => state.mode);
 
   // Get user and user info from state
-  const { user, userInfo } = useSelector((state) => state.search);
+  const { userInfo } = useSelector((state) => state.search);
 
   return (
     <div className={`profile box${!lightmode ? ' box-dark' : ''}`}>

@@ -10,8 +10,9 @@ export const getUser = (value) => ({
 export const FETCH_USER = 'FETCH_USER';
 export const RECEIVED_USER = 'RECEIVED_USER';
 
-export const fetchUser = () => ({
+export const fetchUser = (value) => ({
   type: FETCH_USER,
+  value,
 });
 
 export const receivedUser = (payload) => ({
