@@ -1,9 +1,15 @@
-import { FETCH_USER, GET_USER, RECEIVED_USER } from '../actions/search';
+import {
+  FETCH_USER,
+  GET_USER,
+  IS_ERROR,
+  RECEIVED_USER,
+} from '../actions/search';
 
 const initialState = {
   username: 'octocat',
   userInfo: [],
   loading: false,
+  isError404: false,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -26,6 +32,12 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         userInfo: action.payload,
         loading: false,
+      };
+
+    case IS_ERROR:
+      return {
+        ...state,
+        isError404: action.value,
       };
 
     default:

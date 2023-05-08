@@ -26,7 +26,11 @@ const Profile = () => {
           <div>
             <div className="profile__header__user-details__name">
               <span className={!lightmode ? 'text-dark' : ''}>
-                {userInfo.name}
+                {
+                  userInfo.name
+                    ? userInfo.name
+                    : userInfo.login
+                }
               </span>
             </div>
             <div className="profile__header__user-details__pseudo">

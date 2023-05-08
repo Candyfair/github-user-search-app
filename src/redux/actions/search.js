@@ -9,6 +9,7 @@ export const getUser = (value) => ({
 // Search GitHub API
 export const FETCH_USER = 'FETCH_USER';
 export const RECEIVED_USER = 'RECEIVED_USER';
+export const IS_ERROR = 'IS_ERROR';
 
 export const fetchUser = (value) => ({
   type: FETCH_USER,
@@ -18,4 +19,9 @@ export const fetchUser = (value) => ({
 export const receivedUser = (payload) => ({
   type: RECEIVED_USER,
   payload,
+});
+
+export const isError = (value) => ({
+  type: IS_ERROR,
+  value,
 });
