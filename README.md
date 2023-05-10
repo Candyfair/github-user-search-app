@@ -31,12 +31,13 @@ Users should be able to:
 ### Screenshot
 
 Desktop :
+
 ![Desktop screenshot light mode](./src/assets/images/screenshot1.png)
 ![Desktop screenshot dark mode](./src/assets/images/screenshot2.png)
 
 Mobile :
+
 ![Mobile screenshot light mode](./src/assets/images/screenshot3.png)
-![Mobile screenshot dark mode](./src/assets/images/screenshot4.png)
 
 ### Links
 
