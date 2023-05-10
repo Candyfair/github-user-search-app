@@ -50,13 +50,16 @@ const Search = () => {
           </div>
 
           <div className="search__input-container">
-            <input
-              ref={searchInputRef}
-              className={`search__input${!lightmode ? ' input-dark' : ''}`}
-              type="text"
-              defaultValue="Search GitHub username&hellip;"
-              onFocus={resetInput}
-            />
+            <label htmlFor="searchInput">
+              <input
+                ref={searchInputRef}
+                id="searchInput"
+                className={`search__input${!lightmode ? ' input-dark' : ''}`}
+                type="text"
+                defaultValue="Search GitHub username&hellip;"
+                onFocus={resetInput}
+              />
+            </label>
 
             {
             isError404

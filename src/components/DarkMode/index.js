@@ -52,7 +52,6 @@ const DarkMode = () => {
   return (
     <div
       onClick={handleClick}
-      type="button"
       className="darkMode"
     >
       <div className={`darkMode__text${!lightmode ? '-dark' : ''}`}>
